@@ -1,0 +1,16 @@
+[package]
+name = "recr"
+version = "0.1.0"
+edition = "2021"
+authors = ["lvillis<lvillis@outlook.com>"]
+description = ""
+license = "MIT"
+repository = "https://github.com/lvillis/recr"
+homepage = "https://github.com/lvillis/recr"
+documentation = "https://github.com/lvillis/recr/README.md"
+
+[workspace]
+members = [".", "bin/ref-type"]
+
+[dependencies]
+clap = "4.5.8"
