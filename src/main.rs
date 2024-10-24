@@ -2,6 +2,22 @@ use clap::{Arg, Command};
 use std::process::Command as SystemCommand;
 
 fn main() {
+    match SystemCommand::new("docker").arg("--version").output() {
+        Ok(output) => {
+            if output.status.success() {
+                let version = String::from_utf8_lossy(&output.stdout);
+                println!("Docker is available: {}", version);
+            } else {
+                eprintln!("Docker command failed. Please ensure Docker is installed and in your PATH.");
+                std::process::exit(1);
+            }
+        }
+        Err(_) => {
+            eprintln!("Docker is not installed or not found in PATH.");
+            std::process::exit(1);
+        }
+    }
+
     let matches = Command::new("ReCr")
         .version("0.1.0")
         .author("lvillis")

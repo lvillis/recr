@@ -1,6 +1,6 @@
 [package]
 name = "recr"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2021"
 authors = ["lvillis<lvillis@outlook.com>"]
 description = "🐳 Re-tag Docker Images with Integrated Pull and Push."
